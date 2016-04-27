@@ -1,0 +1,210 @@
+distribution_file:
+- release_platforms:
+    debian: [jessie]
+    fedora: ['23', '24']
+    ubuntu: [wily, xenial]
+  repositories:
+    bond_core:
+      release:
+        packages: [bond, bond_core, bondcpp, bondpy, smclib]
+        tags: {release: 'release/kinetic/{package}/{version}'}
+        url: https://github.com/ros-gbp/bond_core-release.git
+        version: 1.7.17-0
+      source: {type: git, url: 'https://github.com/ros/bond_core.git', version: 4d18c52e69aaca9415df2818b584437312dd4b78}
+      status: maintained
+    catkin:
+      release:
+        tags: {release: 'release/kinetic/{package}/{version}'}
+        url: https://github.com/ros-gbp/catkin-release.git
+        version: 0.7.1-0
+      source: {test_pull_requests: true, type: git, url: 'https://github.com/ros/catkin.git',
+        version: 0.7.1}
+      status: maintained
+    cmake_modules:
+      release:
+        tags: {release: 'release/kinetic/{package}/{version}'}
+        url: https://github.com/ros-gbp/cmake_modules-release.git
+        version: 0.4.0-1
+      source: {type: git, url: 'https://github.com/ros/cmake_modules.git', version: 0.4-devel}
+      status: maintained
+  type: distribution
+  version: 2
+name: kinetic
+release_package_xmls: {bond: "<package>\n  <name>bond</name>\n  <version>1.7.17</version>\n\
+    \  <description>\n    A bond allows two processes, A and B, to know when the other\
+    \ has\n    terminated, either cleanly or by crashing.  The bond remains\n    connected\
+    \ until it is either broken explicitly or until a\n    heartbeat times out.\n\
+    \  </description>\n  <author>Stuart Glaser</author>\n  <maintainer email=\"mikael@osrfoundation.org\"\
+    >Mikael Arguedas</maintainer>\n  <license>BSD</license>\n  <url type=\"website\"\
+    >http://www.ros.org/wiki/bond</url>\n  <url type=\"bugtracker\">https://github.com/ros/bond_core/issues</url>\n\
+    \  <url type=\"repository\">https://github.com/ros/bond_core</url>\n\n  <buildtool_depend>catkin</buildtool_depend>\n\
+    \n  <build_depend>message_generation</build_depend>\n  <build_depend>std_msgs</build_depend>\n\
+    \n  <run_depend>message_runtime</run_depend>\n  <run_depend>std_msgs</run_depend>\n\
+    \n  <export>\n    <architecture_independent/>\n  </export>\n</package>\n", bond_core: "<?xml\
+    \ version=\"1.0\"?>\n<package>\n  <name>bond_core</name>\n  <version>1.7.17</version>\n\
+    \  <description>\n    A bond allows two processes, A and B, to know when the other\
+    \ has\n    terminated, either cleanly or by crashing. The bond remains\n    connected\
+    \ until it is either broken explicitly or until a\n    heartbeat times out.\n\
+    \  </description>\n  <maintainer email=\"mikael@osrfoundation.org\">Mikael Arguedas</maintainer>\n\
+    \  <license>BSD</license>\n\n  <url type=\"website\">http://www.ros.org/wiki/bond_core</url>\n\
+    \  <url type=\"bugtracker\">https://github.com/ros/bond_core/issues</url>\n  <url\
+    \ type=\"repository\">https://github.com/ros/bond_core</url>\n  <author>Stu Glaser</author>\n\
+    \n  <buildtool_depend>catkin</buildtool_depend>\n\n  <run_depend>bond</run_depend>\n\
+    \  <run_depend>bondcpp</run_depend>\n  <run_depend>bondpy</run_depend>\n  <run_depend>smclib</run_depend>\n\
+    \n  <export>\n    <metapackage/>\n  </export>\n</package>\n", bondcpp: "<package>\n\
+    \  <name>bondcpp</name>\n  <version>1.7.17</version>\n  <description>\n    C++\
+    \ implementation of bond, a mechanism for checking when\n    another process has\
+    \ terminated.\n  </description>\n  <author>Stuart Glaser</author>\n  <maintainer\
+    \ email=\"mikael@osrfoundation.org\">Mikael Arguedas</maintainer>\n  <license>BSD</license>\n\
+    \  <url type=\"website\">http://www.ros.org/wiki/bondcpp</url>\n  <url type=\"\
+    bugtracker\">https://github.com/ros/bond_core/issues</url>\n  <url type=\"repository\"\
+    >https://github.com/ros/bond_core</url>\n\n  <buildtool_depend>catkin</buildtool_depend>\n\
+    \n  <build_depend>bond</build_depend>\n  <build_depend>boost</build_depend>\n\
+    \  <build_depend version_gte=\"0.3.2\">cmake_modules</build_depend>\n  <build_depend>roscpp</build_depend>\n\
+    \  <build_depend>smclib</build_depend>\n  <build_depend>uuid</build_depend>\n\n\
+    \  <run_depend>bond</run_depend>\n  <run_depend>boost</run_depend>\n  <run_depend>roscpp</run_depend>\n\
+    \  <run_depend>smclib</run_depend>\n  <run_depend>uuid</run_depend>\n</package>\n",
+  bondpy: "<package>\n  <name>bondpy</name>\n  <version>1.7.17</version>\n  <description>\n\
+    \    Python implementation of bond, a mechanism for checking when\n    another\
+    \ process has terminated.\n  </description>\n  <author>Stuart Glaser</author>\n\
+    \  <maintainer email=\"mikael@osrfoundation.org\">Mikael Arguedas</maintainer>\n\
+    \  <license>BSD</license>\n  <url type=\"website\">http://www.ros.org/wiki/bondpy</url>\n\
+    \  <url type=\"bugtracker\">https://github.com/ros/bond_core/issues</url>\n  <url\
+    \ type=\"repository\">https://github.com/ros/bond_core</url>\n\n  <buildtool_depend>catkin</buildtool_depend>\n\
+    \n  <build_depend>bond</build_depend>\n  <build_depend>rospy</build_depend>\n\
+    \  <build_depend>smclib</build_depend>\n\n  <run_depend>rospy</run_depend>\n \
+    \ <run_depend>smclib</run_depend>\n  <run_depend>uuid</run_depend>\n\n  <export>\n\
+    \    <architecture_independent/>\n  </export>\n</package>\n", catkin: "<?xml version=\"\
+    1.0\"?>\n<package format=\"2\">\n  <name>catkin</name>\n  <version>0.7.1</version>\n\
+    \  <description>Low-level build system macros and infrastructure for ROS.</description>\n\
+    \  <maintainer email=\"dthomas@osrfoundation.org\">Dirk Thomas</maintainer>\n\
+    \  <license>BSD</license>\n\n  <url type=\"website\">http://www.ros.org/wiki/catkin</url>\n\
+    \  <url type=\"bugtracker\">https://github.com/ros/catkin/issues</url>\n  <url\
+    \ type=\"repository\">https://github.com/ros/catkin</url>\n\n  <author>Troy Straszheim</author>\n\
+    \  <author>Morten Kjaergaard</author>\n  <author>Brian Gerkey</author>\n  <author>Dirk\
+    \ Thomas</author>\n\n  <buildtool_depend>cmake</buildtool_depend>\n  <buildtool_export_depend>cmake</buildtool_export_depend>\n\
+    \n  <depend>python-argparse</depend>\n  <depend version_gt=\"0.2.9\">python-catkin-pkg</depend>\n\
+    \n  <build_depend>python-empy</build_depend>\n\n  <build_export_depend>gtest</build_export_depend>\n\
+    \  <build_export_depend>python-empy</build_export_depend>\n  <build_export_depend>python-nose</build_export_depend>\n\
+    \n  <test_depend>python-mock</test_depend>\n  <test_depend>python-nose</test_depend>\n\
+    \n  <export>\n    <rosdoc config=\"rosdoc.yaml\"/>\n    <architecture_independent/>\n\
+    \  </export>\n</package>\n", cmake_modules: "<?xml version=\"1.0\"?>\n<package>\n\
+    \  <name>cmake_modules</name>\n  <version>0.4.0</version>\n  <description>A common\
+    \ repository for CMake Modules which are not distributed with CMake but are commonly\
+    \ used by ROS packages.</description>\n\n  <maintainer email=\"william@osrfoundation.org\"\
+    >William Woodall</maintainer>\n\n  <license>BSD</license>\n\n  <url type=\"repository\"\
+    >https://github.com/ros/cmake_modules</url>\n  <url type=\"bugtracker\">https://github.com/ros/cmake_modules/issues</url>\n\
+    \n  <author email=\"william@osrfoundation.org\">William Woodall</author>\n\n \
+    \ <buildtool_depend>catkin</buildtool_depend>\n\n  <export>\n    <architecture_independent/>\n\
+    \  </export>\n</package>\n", smclib: "<package>\n  <name>smclib</name>\n  <version>1.7.17</version>\n\
+    \  <description>\n    The State Machine Compiler (SMC) from http://smc.sourceforge.net/\n\
+    \    converts a language-independent description of a state machine\n    into\
+    \ the source code to support that state machine.\n\n    This package contains\
+    \ the libraries that a compiled state machine\n    depends on, but it does not\
+    \ contain the compiler itself.\n  </description>\n  <author>Various</author>\n\
+    \  <maintainer email=\"mikael@osrfoundation.org\">Mikael Arguedas</maintainer>\n\
+    \  <license>Mozilla Public License Version 1.1</license>\n  <url type=\"website\"\
+    >http://smc.sourceforge.net/</url>\n  <url type=\"bugtracker\">https://github.com/ros/bond_core/issues</url>\n\
+    \  <url type=\"repository\">https://github.com/ros/bond_core</url>\n\n  <buildtool_depend>catkin</buildtool_depend>\n\
+    \n  <export>\n    <architecture_independent/>\n  </export>\n</package>\n"}
+source_repo_package_xmls:
+  bond_core:
+    _ref: 4d18c52e69aaca9415df2818b584437312dd4b78
+    bond: [bond, "<package>\n  <name>bond</name>\n  <version>1.7.16</version>\n  <description>\n\
+        \    A bond allows two processes, A and B, to know when the other has\n  \
+        \  terminated, either cleanly or by crashing.  The bond remains\n    connected\
+        \ until it is either broken explicitly or until a\n    heartbeat times out.\n\
+        \  </description>\n  <author>Stuart Glaser</author>\n  <maintainer email=\"\
+        esteve@osrfoundation.org\">Esteve Fernandez</maintainer>\n  <license>BSD</license>\n\
+        \  <url type=\"website\">http://www.ros.org/wiki/bond</url>\n  <url type=\"\
+        bugtracker\">https://github.com/ros/bond_core/issues</url>\n  <url type=\"\
+        repository\">https://github.com/ros/bond_core</url>\n\n  <buildtool_depend>catkin</buildtool_depend>\n\
+        \n  <build_depend>message_generation</build_depend>\n  <build_depend>std_msgs</build_depend>\n\
+        \n  <run_depend>message_runtime</run_depend>\n  <run_depend>std_msgs</run_depend>\n\
+        \n  <export>\n    <architecture_independent/>\n  </export>\n</package>\n"]
+    bond_core: [bond_core, "<?xml version=\"1.0\"?>\n<package>\n  <name>bond_core</name>\n\
+        \  <version>1.7.16</version>\n  <description>\n    A bond allows two processes,\
+        \ A and B, to know when the other has\n    terminated, either cleanly or by\
+        \ crashing. The bond remains\n    connected until it is either broken explicitly\
+        \ or until a\n    heartbeat times out.\n  </description>\n  <maintainer email=\"\
+        esteve@osrfoundation.org\">Esteve Fernandez</maintainer>\n  <license>BSD</license>\n\
+        \n  <url type=\"website\">http://www.ros.org/wiki/bond_core</url>\n  <url\
+        \ type=\"bugtracker\">https://github.com/ros/bond_core/issues</url>\n  <url\
+        \ type=\"repository\">https://github.com/ros/bond_core</url>\n  <author>Stu\
+        \ Glaser</author>\n\n  <buildtool_depend>catkin</buildtool_depend>\n\n  <run_depend>bond</run_depend>\n\
+        \  <run_depend>bondcpp</run_depend>\n  <run_depend>bondpy</run_depend>\n \
+        \ <run_depend>smclib</run_depend>\n\n  <export>\n    <metapackage/>\n  </export>\n\
+        </package>"]
+    bondcpp: [bondcpp, "<package>\n  <name>bondcpp</name>\n  <version>1.7.16</version>\n\
+        \  <description>\n    C++ implementation of bond, a mechanism for checking\
+        \ when\n    another process has terminated.\n  </description>\n  <author>Stuart\
+        \ Glaser</author>\n  <maintainer email=\"esteve@osrfoundation.org\">Esteve\
+        \ Fernandez</maintainer>\n  <license>BSD</license>\n  <url type=\"website\"\
+        >http://www.ros.org/wiki/bondcpp</url>\n  <url type=\"bugtracker\">https://github.com/ros/bond_core/issues</url>\n\
+        \  <url type=\"repository\">https://github.com/ros/bond_core</url>\n\n  <buildtool_depend>catkin</buildtool_depend>\n\
+        \n  <build_depend>bond</build_depend>\n  <build_depend>boost</build_depend>\n\
+        \  <build_depend version_gte=\"0.3.2\">cmake_modules</build_depend>\n  <build_depend>roscpp</build_depend>\n\
+        \  <build_depend>smclib</build_depend>\n  <build_depend>uuid</build_depend>\n\
+        \n  <run_depend>bond</run_depend>\n  <run_depend>boost</run_depend>\n  <run_depend>roscpp</run_depend>\n\
+        \  <run_depend>smclib</run_depend>\n  <run_depend>uuid</run_depend>\n</package>\n"]
+    bondpy: [bondpy, "<package>\n  <name>bondpy</name>\n  <version>1.7.16</version>\n\
+        \  <description>\n    Python implementation of bond, a mechanism for checking\
+        \ when\n    another process has terminated.\n  </description>\n  <author>Stuart\
+        \ Glaser</author>\n  <maintainer email=\"esteve@osrfoundation.org\">Esteve\
+        \ Fernandez</maintainer>\n  <license>BSD</license>\n  <url type=\"website\"\
+        >http://www.ros.org/wiki/bondpy</url>\n  <url type=\"bugtracker\">https://github.com/ros/bond_core/issues</url>\n\
+        \  <url type=\"repository\">https://github.com/ros/bond_core</url>\n\n  <buildtool_depend>catkin</buildtool_depend>\n\
+        \n  <build_depend>bond</build_depend>\n  <build_depend>rospy</build_depend>\n\
+        \  <build_depend>smclib</build_depend>\n\n  <run_depend>rospy</run_depend>\n\
+        \  <run_depend>smclib</run_depend>\n  <run_depend>uuid</run_depend>\n\n  <export>\n\
+        \    <architecture_independent/>\n  </export>\n</package>\n"]
+    smclib: [smclib, "<package>\n  <name>smclib</name>\n  <version>1.7.16</version>\n\
+        \  <description>\n    The State Machine Compiler (SMC) from http://smc.sourceforge.net/\n\
+        \    converts a language-independent description of a state machine\n    into\
+        \ the source code to support that state machine.\n\n    This package contains\
+        \ the libraries that a compiled state machine\n    depends on, but it does\
+        \ not contain the compiler itself.\n  </description>\n  <author>Various</author>\n\
+        \  <maintainer email=\"esteve@osrfoundation.org\">Esteve Fernandez</maintainer>\n\
+        \  <license>Mozilla Public License Version 1.1</license>\n  <url type=\"website\"\
+        >http://smc.sourceforge.net/</url>\n  <url type=\"bugtracker\">https://github.com/ros/bond_core/issues</url>\n\
+        \  <url type=\"repository\">https://github.com/ros/bond_core</url>\n\n  <buildtool_depend>catkin</buildtool_depend>\n\
+        \n  <export>\n    <architecture_independent/>\n  </export>\n</package>\n"]
+    test_bond: [test_bond, "<package>\n  <name>test_bond</name>\n  <version>1.7.16</version>\n\
+        \  <description>\n     Contains tests for [[bond]], including tests for [[bondpy]]\
+        \ and [[bondcpp]].\n  </description>\n  <author>Stuart Glaser</author>\n \
+        \ <maintainer email=\"esteve@osrfoundation.org\">Esteve Fernandez</maintainer>\n\
+        \  <license>BSD</license>\n  <url type=\"website\">http://www.ros.org/wiki/test_bond</url>\n\
+        \  <url type=\"bugtracker\">https://github.com/ros/bond_core/issues</url>\n\
+        \  <url type=\"repository\">https://github.com/ros/bond_core</url>\n\n  <buildtool_depend\
+        \ version_gte=\"0.5.68\">catkin</buildtool_depend>\n\n  <build_depend>bondcpp</build_depend>\n\
+        \  <build_depend>genmsg</build_depend>\n  <build_depend>rostest</build_depend>\n\
+        \n  <test_depend>bondpy</test_depend>\n</package>\n"]
+  catkin:
+    _ref: 5f653c01e531f4360942d737e0f8e3fc37d93c46
+    catkin: ['', "<?xml version=\"1.0\"?>\n<package format=\"2\">\n  <name>catkin</name>\n\
+        \  <version>0.7.1</version>\n  <description>Low-level build system macros\
+        \ and infrastructure for ROS.</description>\n  <maintainer email=\"dthomas@osrfoundation.org\"\
+        >Dirk Thomas</maintainer>\n  <license>BSD</license>\n\n  <url type=\"website\"\
+        >http://www.ros.org/wiki/catkin</url>\n  <url type=\"bugtracker\">https://github.com/ros/catkin/issues</url>\n\
+        \  <url type=\"repository\">https://github.com/ros/catkin</url>\n\n  <author>Troy\
+        \ Straszheim</author>\n  <author>Morten Kjaergaard</author>\n  <author>Brian\
+        \ Gerkey</author>\n  <author>Dirk Thomas</author>\n\n  <buildtool_depend>cmake</buildtool_depend>\n\
+        \  <buildtool_export_depend>cmake</buildtool_export_depend>\n\n  <depend>python-argparse</depend>\n\
+        \  <depend version_gt=\"0.2.9\">python-catkin-pkg</depend>\n\n  <build_depend>python-empy</build_depend>\n\
+        \n  <build_export_depend>gtest</build_export_depend>\n  <build_export_depend>python-empy</build_export_depend>\n\
+        \  <build_export_depend>python-nose</build_export_depend>\n\n  <test_depend>python-mock</test_depend>\n\
+        \  <test_depend>python-nose</test_depend>\n\n  <export>\n    <rosdoc config=\"\
+        rosdoc.yaml\"/>\n    <architecture_independent/>\n  </export>\n</package>\n"]
+  cmake_modules:
+    _ref: 5d9fde38f90c7535510ec9d30f439355869b725d
+    cmake_modules: ['', "<?xml version=\"1.0\"?>\n<package>\n  <name>cmake_modules</name>\n\
+        \  <version>0.4.0</version>\n  <description>A common repository for CMake\
+        \ Modules which are not distributed with CMake but are commonly used by ROS\
+        \ packages.</description>\n\n  <maintainer email=\"william@osrfoundation.org\"\
+        >William Woodall</maintainer>\n\n  <license>BSD</license>\n\n  <url type=\"\
+        repository\">https://github.com/ros/cmake_modules</url>\n  <url type=\"bugtracker\"\
+        >https://github.com/ros/cmake_modules/issues</url>\n\n  <author email=\"william@osrfoundation.org\"\
+        >William Woodall</author>\n\n  <buildtool_depend>catkin</buildtool_depend>\n\
+        \n  <export>\n    <architecture_independent/>\n  </export>\n</package>\n"]
+type: cache
+version: 2
