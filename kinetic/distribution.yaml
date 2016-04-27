@@ -27,7 +27,7 @@ repositories:
     source:
       type: git
       url: https://github.com/ros/bond_core.git
-      version: 4d18c52e69aaca9415df2818b584437312dd4b78
+      version: master
     status: maintained
   catkin:
     release:
@@ -39,7 +39,7 @@ repositories:
       test_pull_requests: true
       type: git
       url: https://github.com/ros/catkin.git
-      version: 0.7.1
+      version: 0.7.0
     status: maintained
   cmake_modules:
     release:
@@ -50,7 +50,7 @@ repositories:
     source:
       type: git
       url: https://github.com/ros/cmake_modules.git
-      version: 0.4-devel
+      version: b6c1fb91b0316dad78ef58aab90da19aeb76ed15
     status: maintained
 type: distribution
 version: 2
