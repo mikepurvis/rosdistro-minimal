@@ -13,10 +13,6 @@ release_platforms:
   - xenial
 repositories:
   bond_core:
-    doc:
-      type: git
-      url: https://github.com/ros/bond_core.git
-      version: master
     release:
       packages:
       - bond
@@ -31,13 +27,9 @@ repositories:
     source:
       type: git
       url: https://github.com/ros/bond_core.git
-      version: master
+      version: 4d18c52e69aaca9415df2818b584437312dd4b78
     status: maintained
   catkin:
-    doc:
-      type: git
-      url: https://github.com/ros/catkin.git
-      version: kinetic-devel
     release:
       tags:
         release: release/kinetic/{package}/{version}
@@ -47,13 +39,9 @@ repositories:
       test_pull_requests: true
       type: git
       url: https://github.com/ros/catkin.git
-      version: kinetic-devel
+      version: 0.7.1
     status: maintained
   cmake_modules:
-    doc:
-      type: git
-      url: https://github.com/ros/cmake_modules.git
-      version: 0.4-devel
     release:
       tags:
         release: release/kinetic/{package}/{version}
